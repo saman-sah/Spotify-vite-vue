@@ -83,5 +83,10 @@ import {
     </div>
     <SideNav />
   </div>
+  <div class="fixed right-0 top-0 w-[calc(100%-240px)] overflow-auto h-full bg-gradient-to-b from-[#1C1C1C] to-black">
+    <div class="mt-[70px]" />
+      <router-view></router-view>
+    <div class="mb-[100px]" />
+    </div>
 </template>
 

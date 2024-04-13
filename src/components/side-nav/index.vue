@@ -1,5 +1,21 @@
 <script setup>
 import MenuItem from './MenuItem.vue'
+const menuItems = [
+  {
+    to: '/',
+    iconSize: 23,
+    name: 'Home',
+    iconString: 'home',
+    pageUrl: '/'
+  },
+  {
+    to: '/search',
+    iconSize: 23,
+    name: 'Search',
+    iconString: 'search',
+    pageUrl: '/search'
+  }
+]
 </script>
 <template>
   <div
@@ -15,8 +31,15 @@ import MenuItem from './MenuItem.vue'
     </router-link>
     <div class="my-8" />
     <ul>
-      <router-link to="/">
-        <MenuItem />
+      <router-link
+        v-for="item, index in menuItems"
+        :key="index"
+        :to="item.to"
+      >
+        <MenuItem
+          class="ml-[1px]"
+          v-bind="item"
+        />
       </router-link>
     </ul>
   </div>
