@@ -1,21 +1,6 @@
 <script setup>
 import MenuItem from './MenuItem.vue'
-const menuItems = [
-  {
-    to: '/',
-    iconSize: 23,
-    name: 'Home',
-    iconString: 'home',
-    pageUrl: '/'
-  },
-  {
-    to: '/search',
-    iconSize: 23,
-    name: 'Search',
-    iconString: 'search',
-    pageUrl: '/search'
-  }
-]
+import { menuItems, playList } from '../../utils/data'
 </script>
 <template>
   <div
@@ -41,6 +26,26 @@ const menuItems = [
           v-bind="item"
         />
       </router-link>
+      <div class="py-3.5" />
+      <template 
+        v-for="pItem in playList"
+        :key="pItem"
+      >
+        <MenuItem
+          class="ml-[1px]"
+          v-bind="pItem"
+        />
+      </template>
+    </ul>
+    <div class="border-b border-b-gray-700" />
+    <ul>
+      <li
+        v-for="n in 5"
+        :key="n"
+        class="font-semibold trext-[13px] mt-3 text-gray-300 hover:text-white"
+      >
+        My Playlist #{{ n }}
+      </li>
     </ul>
   </div>
 </template>

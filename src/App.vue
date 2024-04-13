@@ -7,7 +7,7 @@ import {
   ChevronUp
  } from './utils/icons'
 
- import SideNav from './components/side-nav/index.vue'
+ import SideNav from './components/Side-Nav/index.vue'
 
  const openMenu = ref(false)
 </script>
@@ -73,10 +73,10 @@ import {
       >
         <ul class="text-gray-200 font-semibold text-[14px]">
           <li class="Ppx-3 py-2.5 hover:bg-[#3E3D3D] border-b border-b-gray-600">
-            Profile            
+            Profile
           </li>
           <li class="Ppx-3 py-2.5 hover:bg-[#3E3D3D]">
-            Log out            
+            Log out
           </li>
         </ul>
       </span>
