@@ -1,5 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+
+import { storeToRefs } from 'pinia'
+import { useSongStore } from './stores/song.js'
+
+
 import { 
   ChevronLeft,
   ChevronRight,
@@ -7,9 +12,17 @@ import {
   ChevronUp
  } from './utils/icons'
 
- import SideNav from './components/Side-Nav/index.vue'
+import SideNav from './components/Side-Nav/index.vue'
+import MusicPlayer from './components/MusicPlayer.vue'
 
- const openMenu = ref(false)
+const openMenu = ref(false)
+
+const useSong = useSongStore()
+const { isPlaying, audio, currentTrack, currentArtist }  = storeToRefs(useSong)
+
+onMounted(() => {
+  isPlaying.value = false
+})
 </script>
 
 <template>
@@ -87,6 +100,8 @@ import {
     <div class="mt-[70px]" />
       <router-view></router-view>
     <div class="mb-[100px]" />
-    </div>
+  </div>
+
+  <MusicPlayer v-if="currentTrack" />
 </template>
 
