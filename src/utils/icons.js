@@ -6,13 +6,17 @@ import Magnify from 'vue-material-design-icons/Magnify.vue'
 import ChevronUp from 'vue-material-design-icons/ChevronUp.vue'
 import Television from 'vue-material-design-icons/Television.vue'
 import TrendingUp from 'vue-material-design-icons/TrendingUp.vue'
+import SkipForward from 'vue-material-design-icons/SkipForward.vue'
 import ChevronDown from 'vue-material-design-icons/ChevronDown.vue'
 import ChevronLeft from 'vue-material-design-icons/ChevronLeft.vue'
 import HomeOutline from 'vue-material-design-icons/HomeOutline.vue'
 import MovieOutline from 'vue-material-design-icons/MovieOutline.vue'
 import ChevronRight from 'vue-material-design-icons/ChevronRight.vue'
+import SkipBackward from 'vue-material-design-icons/SkipBackward.vue'
 import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue'
 import ClockTimeThreeOutline from 'vue-material-design-icons/ClockTimeThreeOutline.vue'
+import PictureInPictureBottomRight from 'vue-material-design-icons/PictureInPictureBottomRight.vue';
+
 
 export {
   Plus,
@@ -26,8 +30,11 @@ export {
   HomeOutline,
   ChevronLeft,
   ChevronDown,
+  SkipForward,
+  SkipBackward,
   MovieOutline,
   ChevronRight,
   DotsHorizontal,
-  ClockTimeThreeOutline
+  ClockTimeThreeOutline,
+  PictureInPictureBottomRight
 }
