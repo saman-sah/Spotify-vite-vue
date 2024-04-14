@@ -4,6 +4,9 @@ import Pause from 'vue-material-design-icons/Pause.vue'
 import Heart from 'vue-material-design-icons/Heart.vue'
 import Magnify from 'vue-material-design-icons/Magnify.vue'
 import ChevronUp from 'vue-material-design-icons/ChevronUp.vue'
+import VolumeMute from 'vue-material-design-icons/VolumeMute.vue'
+import VolumeHigh from 'vue-material-design-icons/VolumeHigh.vue'
+import VolumeMedium from 'vue-material-design-icons/VolumeMedium.vue'
 import Television from 'vue-material-design-icons/Television.vue'
 import TrendingUp from 'vue-material-design-icons/TrendingUp.vue'
 import SkipForward from 'vue-material-design-icons/SkipForward.vue'
@@ -27,10 +30,13 @@ export {
   ChevronUp,
   Television,
   TrendingUp,
+  VolumeMute,
+  VolumeHigh,
   HomeOutline,
   ChevronLeft,
   ChevronDown,
   SkipForward,
+  VolumeMedium,
   SkipBackward,
   MovieOutline,
   ChevronRight,

@@ -5,7 +5,6 @@ import uniqolor from 'uniqolor';
 
 const randomColor = ref('')
 randomColor.value = uniqolor.random()
-console.log('randomColor.value ', randomColor.value.color );
 const props = defineProps({
   category: {
     type: String,

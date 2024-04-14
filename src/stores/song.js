@@ -8,13 +8,13 @@ export const useSongStore = defineStore('song', () => {
   const currentTrack = ref(null)
   const currentArtist = ref(null)
 
-  function loadSong (artist, track) {
+  function loadSong(artist, track) {
     currentArtist.value = artist
     currentTrack.value = track
-    if(audio.value && audio.src) {
+    if (audio.value && audio.value.src) {
       audio.value.pause()
       isPlaying.value = false
-      audio.value.src = '' 
+      audio.value.src = ''
     }
 
     audio.value = new Audio()
@@ -22,12 +22,12 @@ export const useSongStore = defineStore('song', () => {
 
     setTimeout(() => {
       isPlaying.value = true
-      audio.play()
+      audio.value.play()
     }, 200);
   }
 
-  function playOrPauseSong () {
-    if(audio.value.pause) {
+  function playOrPauseSong() {
+    if (audio.value.paused) {
       isPlaying.value = true
       audio.value.play()
     } else {
@@ -36,9 +36,9 @@ export const useSongStore = defineStore('song', () => {
     }
   }
 
-  function playOrPauseThisSong (artist, track) {
-    if(!audio.value || !audio.value.src || currentTrack.id !== track.id) {
-      loadSong(artist, track) 
+  function playOrPauseThisSong(artist, track) {
+    if (!audio.value || !audio.value.src || currentTrack.value.id !== track.id) {
+      loadSong(artist, track)
       return
     }
     playOrPauseSong()
@@ -50,14 +50,14 @@ export const useSongStore = defineStore('song', () => {
   }
 
   function nextSong(currentTrack) {
-    if(currentTrack.id === artist.tracks.length) {
+    if (currentTrack.id === artist.tracks.length) {
       let track = artist.tracks[0]
       loadSong(artist, track)
     } else {
       let track = artist.tracks[currentTrack.id]
       loadSong(artist, track)
     }
-    
+
   }
 
   function playFromFirst() {

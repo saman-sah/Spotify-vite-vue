@@ -1,4 +1,8 @@
 <script setup>
+import { ref, watch, onMounted } from 'vue'
+
+import { storeToRefs } from 'pinia'
+import { useSongStore } from '../stores/song'
 import {
   Play,
   Pause,
@@ -9,6 +13,17 @@ import {
 import artist from '../utils/artist.json'
 
 import SongRow from '../components/Library-View/SongRow.vue'
+
+const useSong = useSongStore()
+const { isPlaying, currentTrack, currentArtist }  = storeToRefs(useSong)
+
+const playFunc = () => {
+  if(currentTrack.value) {
+    useSong.playOrPauseThisSong(currentArtist.value, currentTrack.value)
+    return
+  }
+  useSong.playFromFirst()
+}
 </script>
 <template>
   <div class="p-8 overflow-hidden">
@@ -43,13 +58,17 @@ import SongRow from '../components/Library-View/SongRow.vue'
         </div>
 
         <div class="absolute flex gap-4 items-center justify-start bottom-0 mb-1.5">
-          <button type="button" class="p-1 rounded-full bg-white">
+          <button
+            type="button"
+            class="p-1 rounded-full bg-white"
+            @click="playFunc()"
+          >
             <Play
-              v-if="true"
+              v-if="!isPlaying"
               fillColor="#181818"
               :size="25"
             />
-            <Play
+            <Pause
               v-else
               fillColor="#181818"
               :size="25"
